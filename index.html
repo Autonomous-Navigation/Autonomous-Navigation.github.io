@@ -75,5 +75,232 @@
 	</table>
 	<br>
 	<hr>
+	<table align=center width=850px>
+		<center><h1>Modules</h1></center>
+		<tr>
+			<td> <p>Using our GDIP block, we propose novel variants as below:</p>
+				<ul>
+					<li> <b>GDIP-Yolo: </b>  a single GDIP block (fed with an adverse input and latent embeddings from an encoder) 
+						can be plugged into existing object detection networks (e.g., Yolo) and trained end-to-end with 
+						adverse condition images (fog and low-lighting).
+						<figure align=center>
+							<img style="width:500px" src="assets/images/gdip_forwardpass.gif"/>
+							<figcaption align="center">GDIP-Yolo Forward Pass
+							</figcaption>
+						</figure>
+					<br>
+					<li> <b>Multi-level GDIP-Yolo (MGDIP-Yolo):</b> a multi-level version of GDIP where an 
+						image is progressively enhanced through multiple GDIP blocks, each guided by a different layer 
+						of the image encoder. Providing access to such multiple feature scales helps it utlilize 
+						the local/global properties to selectively apply Image Processing operations. 
+						<figure align=center>
+							<img style="width:500px" src="assets/images/mgdip_forwardpass.gif"/>
+							<figcaption align="center">MGDIP-Yolo Forward Pass
+							</figcaption>
+						</figure>
+					<br>
+
+					<li> <b>GDIP as regularizer:</b> an adaptation of GDIP as training regularizer, 
+						which directly improves object detection training by learning weather-invariant features. 
+						It can be removed during inference, thus saving compute time with improved performance in adverse conditions.
+						<br><br>
+							<figure align=center>
+								<img align="center" style="width:400px" src="assets/images/gdip_reg.jpg"/>
+								<figcaption align="center">GDIP as regularizer</figcaption>
+							</figure>
+					</li>
+					<br><br>
+
+				</ul>
+			
+			</td>
+		</tr>
+	</table>
+
+	<br>
+
+	<hr>
+	<table align=center width=850px>
+		<center><h1>Quantitative Analysis</h1></center>
+		<tr>
+			<td>
+				<ul>
+					<p align=center style="font-size: 20px">Foggy setting</p>
+					<figure align =center>
+						<img style="width:400px" src="assets/images/quantitative_fog.PNG"/>
+						<figcaption align="center" style="font-size: 13px"> Quantitative results for foggy conditions on the V_N_Ts
+							(VOCNormal Test set), V_F_Ts (VOCFoggy Test set) and realworld RTTS dataset. Best and second best mAP scores are bold
+							and italicized, respectively
+						</figcaption>
+					</figure>
+
+					<p align=center style="font-size: 20px">Low-lighting setting</p>
+					<figure align =center>
+						<img style="width:400px" src="assets/images/quantitative_dark.PNG"/>
+						<figcaption align="center" style="font-size: 13px">  Quantitative results for low-lighting conditions on the
+							V_N_Ts (VOCNormal Test set), V_D_Ts (VOCDark Test set) and
+							real-world ExDark dataset. Best and second best mAP scores are
+							bold and italicized, respectively. 
+							<br><br>
+							<b>NOTE:</b> IA-Yolo uses a prior (i.e. IA-Yolo (with prior)) for low-lighting setting by removing the defogging and 
+							white balance filters. Hence, we evaluate IA-Yolo (w/o prior) by incorporating the defogging and white balance filters 
+							(their same pipeline as in case of foggy setting) to do fair comparison with our approach.
+						</figcaption>
+					</figure>
+				</ul>
+			
+			</td>
+		</tr>
+	</table>
+
+	<hr>
+	<table align=center width=850px>
+		<center><h1>GDIP in the Wild</h1></center>
+		<tr>
+			<td>
+				<ul>
+					<p>GDIP runs seamlessly on video sequences in the wild without any need for retraining or fine tuning, 
+						showcasing its ability to detect objects by composing Image Processing operations through gating by training on only synthetic adverse data.
+					</p>
+					<br>
+					<figure>
+						<img style="width:800px; margin-right: 100px" src="assets/images/dark_realworld_highquality.gif"/>
+						<figcaption align="center"><b>Note:</b> how as the car moves from complete darkness to natural lighting, the gate firing changes from only gamma to gamma, defog and tone.
+						</figcaption>
+
+						<br><br>
+						<img style="width:800px" src="assets/images/foggy_realworld_highquality.gif"/>
+						<figcaption align="center">Our GDIP-Yolo does robust detection with defog gate firing, which is consistent
+							 with the foggy weather setting.</figcaption>
+					</figure>
+				</ul>
+			
+			</td>
+		</tr>
+	</table>
+
+	<br>
+
+
+	<!-- <center> <h3> Distance between Adjacent Buildings </h3>
+	<img class="round" style="width:1000px" src="assets/images/DistanceModule.png"/>
+	<p>This module provide us the distance between two adjacent buildings. We sampled the images from the videos captured by UAV and perform panoptic segmentation using state-of-art deep learning model, eliminating vegetation (like trees) from the images. The masked images are then fed to a state-of-the art image-based 3D reconstruction library which outputs a dense 3D point cloud. We then apply RANSAC for fitting planes between the segmented structural point cloud. Further, the points are sampled on these planes to calculate the distance between the adjacent buildings at different locations.</p>
+	</center>
+	<br> -->
+
+
+	<!-- <center> <h3> Results: Distance between Adjacent Buildings </h3>
+	<img class="round" style="width:800px" src="assets/images/Results-DistanceModule-1.png"/>
+	<p> Sub-figures (a), (b) and (c) and (d), (e) and (f) represent the implementation of plane fitting using piecewise-RANSAC in different views for two subject buildings.</p>
+	
+	</center>
+	<br> -->
+
+
+
+
+	<!-- <center> <h3> Plan Shape and Roof Area Estimation </h3>
+	<img class="round" style="width:1000px" src="assets/images/PlanShape&RoofareaEstimation.png"/>
+	<p>This module provides information regarding the shape and roof area of the building. We segment the roof using a state-of-the-art semantic segmentation deep learning model. We also subjected the input images to a pre-processing module that removes distortions from the wide-angle images. Data augmentation was used to increase the robustness and performance. Roof Area was calculated using the focal length of the camera, the height of the drone from the roof and the segmented mask area in pixels.
+</p>
+	</center>
+	<br>
+
+
+
+	<center> <h3> Results: Plan Shape and Roof Area Estimation </h3>
+	<img class="round" style="width:800px" src="assets/images/Results-PlanShape&RoofareaEstimation-1.png"/>
+	<p>This figure represents the roof segmentation results for 4 subject buildings.</p>
+	
+	</center>
+	<br>
+
+
+	<center> <h3> Roof Layout Estimation </h3>
+	<img class="round" style="width:1000px" src="assets/images/RoofLaoutEstimation.png"/>
+	<p>This module provides information about the roof layout. Since it is not possible to capture the whole roof in a single frame specially in the case of large sized buildings, we perform large scale image stitching of partially visible roofs followed by NSE detection and roof segmentation.
+
+</p>
+	</center>
+	<br> -->
+
+
+
+	<!-- <center> <h3> Results: Roof Layout Estimation </h3>
+	<img class="round" style="width:800px" src="assets/images/imagestitchingoutput.jpeg"/>
+	<p>Stitched Image</p>
+	<img class="round" style="width:800px" src="assets/images/roofmask.png"/>
+	<p>Roof Mask</p>
+	<img class="round" style="width:800px" src="assets/images/objectmask.png"/>
+	<p>Object Mask</p>
+	
+	</center>
+	<br> -->
+
+
+
+
+<!--
+
+	<center> <h1> Resources </h1>
+	<table width="100%" style="margin: 20pt auto; text-align: center;">
+	      <tr>
+				<td width="33%" valign="middle">
+				    <center>
+					<a href="https://github.com/atmacvit/meronymnet" target="_blank"
+					   class="imageLink"><img src="./resources/Octocat.png" ,=, width="75%" /></a><br /><br />
+					<a href="https://github.com/atmacvit/meronymnet" target="_blank">Code</a>
+				    </center>
+				</td>
+				<td width="33%" valign="middle">
+				    <center>
+					<a href="https://drive.google.com/file/d/1NnY4tcV1wnlSWMzT_Ae6hH6v5l8GCIrX/view?usp=sharing" target="_blank"
+					   class="imageLink"><img src="./resources/Paper_crop.png" ,=, width="75%" /></a><br /><br />
+					<a href="https://drive.google.com/file/d/1NnY4tcV1wnlSWMzT_Ae6hH6v5l8GCIrX/view?usp=sharing" target="_blank">Paper</a>
+				    </center>
+
+				</td>
+
+
+			       <td width="33%" valign="middle">
+				    <center>
+					<a href="" target="_blank"
+					   class="imageLink"><img src="./resources/Supp_crop.png" ,=, width="75%" /></a><br /><br />
+					<a href="" target="_blank">Supplementary</a>
+				    </center>
+				</td>
+	      </tr>
+    	</table>
+	</center>
+	<br>
+
+	<table align=center width=600px>
+		<tr>
+			<td><span style="font-size:14pt"><center>
+				<a href="./resources/bibtex.txt">[Bibtex]</a>
+			</center></td>
+		</tr>
+	</table>
+
+	<hr>
+	<br>
+
+	<table align=center width=900px>
+		<tr>
+			<td width=400px>
+				<left>
+					<center><h1>Acknowledgements</h1></center>
+					This template was originally made by <a href="http://web.mit.edu/phillipi/">Phillip Isola</a> and <a href="http://richzhang.github.io/">Richard Zhang</a> for a <a href="http://richzhang.github.io/colorization/">colorful</a> ECCV project; the code can be found <a href="https://github.com/richzhang/webpage-template">here</a>.
+				</left>
+			</td>
+		</tr>
+	</table>
+
+<br> -->
+<hr>
+<center> <h1> Contact </h1>
+	<p>If you have any questions, please reach out to any of the above mentioned authors.</p>
+	</center>
+
 </body>
 </html>
