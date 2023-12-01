@@ -2,40 +2,54 @@
 <html>
 <head>
     <style>
-        table {
+        #moreInfo {
+            display: none;
             border: 1px solid #ddd;
             border-collapse: collapse;
             margin: auto;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            color: #007bff;
-            margin-bottom: 0;
-        }
-
-        td {
             background-color: #f9f9f9;
             padding: 20px;
+            width: 850px;
         }
 
-        ul {
-            list-style-type: none;
-            padding: 0;
+        .infoButton {
+            display: block;
+            width: 200px;
+            padding: 10px;
+            margin: 20px auto;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
         }
 
-        li {
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 10px;
+        .infoButton:hover {
+            background-color: #0056b3;
+        }
+	.toggleButton {
+            display: block;
+            width: 200px;
+            padding: 10px;
+            margin: 20px auto;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
         }
 
-        li:before {
-            content: '→ ';
-            color: #007bff;
-            font-weight: bold;
+        .toggleButton:hover {
+            background-color: #0056b3;
         }
+
+        .contentContainer {
+            display: none;
+        }    
     </style>
+</head>
+<body>
 		<span style="font-size:36px">AGNI : Autonomous Ground Navigation Initiative</span>
 		<table align="center" width="1000px">
 			<tr>
@@ -70,25 +84,16 @@
             </table>
 
 		<br>
+	    <div class="toggleButton" onclick="toggleContent('motivationContent')">Toggle Motivation</div>
 
-		<table align="center" width="850px">
-		<h1 style="text-align:center">Motivation</h1>
-		<tr>
-			<td>
-				<ul>
-					<li>Traversing rough terrain: Rovers are often deployed in environments with rugged landscapes such as rocky terrains, steep slopes, or even extraterrestrial surfaces. The inability to navigate such rough terrains restricts their access to important locations, limiting their ability to explore and gather valuable data. Overcoming this limitation would enable rovers to venture into previously inaccessible areas, unlocking new scientific discoveries and expanding our understanding of the natural and extraterrestrial worlds.</li>
-					<li>Inability to climb stairs: Urban and indoor environments often feature staircases or other vertical obstacles that pose significant challenges for rovers. This limitation hinders their ability to perform tasks in buildings, disaster-stricken areas, or even search and rescue operations. Enabling rovers to overcome this obstacle and navigate staircases would greatly expand their potential applications, allowing them to access areas that are currently inaccessible to conventional wheeled rovers.</li>
-					<li>Lack of overall visibility: Rovers typically rely on cameras and sensors to perceive their surroundings. However, these systems have limitations in terms of range, resolution, and field of view. The restricted visibility prevents rovers from comprehensively assessing their environment, which can lead to missed opportunities or potential hazards. Developing technologies that provide rovers with a broader and more detailed understanding of their surroundings would greatly enhance their situational awareness and decision-making capabilities.</li>
-					
-					
-				</ul>
-			</td>
-		</tr>
-	</table>
+   
+            <div id="motivationContent" class="contentContainer">
+
+		
 
 	<hr>
 	 <table align="center" width="850px">
-        <h1 style="text-align:center">Problem Summary</h1>
+        <h1 style="text-align:center">Problem Statement</h1>
         <tr>
             <td>
                 <ul>
@@ -330,6 +335,15 @@
 <center> <h1> Contact </h1>
 	<p>If you have any questions, please reach out to any of the above mentioned authors.</p>
 	</center>
-
+<script>
+        function toggleContent(contentId) {
+            var content = document.getElementById(contentId);
+            if (content.style.display === "none") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
