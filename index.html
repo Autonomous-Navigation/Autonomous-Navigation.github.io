@@ -75,7 +75,7 @@
                                         <li>Utilizes the Pixhawk Cube as a flight controller running Ardupilot software, receiving inputs from a Jetson Nano companion computer via Dronekit-Python API and MAVLink-MAVProxy protocol.</li>
                                         <li>Integrates sensors like the Intel Realsense D455 depth camera and Slamtec RPLiDAR A3 with ROS on the Jetson Nano for navigation, implementing advanced algorithms for data processing and fusion.</li>
                                         <li>Employs techniques like Semantic Segmentation, Object Detection, and Extended Kalman filters to maneuver the rover, using OpenRouteService API for waypoint navigation.</li>
-</ul>
+                               </ul>
 			</td>
 		</tr>
 	</table>
@@ -127,29 +127,7 @@
 							
 
 					
-					<br>
-				<li> <b>Ground Control System</b>:</li>
-                                        <li>The ground control system (GCS) is a vital part of the rover ecosystem, enabling remote control, monitoring, and communication with the rover. It consists of hardware and software components that allow operators or users to interact with the rover and oversee its operation.</li>
-				        <li><b>Ground Control System Components</b>:</li>
-                                        <li><b>Hardware</b>: The hardware components of the ground control system include devices such as laptops, tablets, smartphones, or dedicated ground control stations. These devices provide a user interface for operators to interact with the rover and monitor its status.</li>
-					<li><b>Software</b>: The software component of the ground control system includes applications or programs that facilitate communication, mission planning, and monitoring of the rover. Examples of popular ground control software are Mission Planner (Windows) and QGroundControl (available for IOS, Linux, and Windows).</li>
-						<figure align=center>
-							<img style="width:500px" src="files/css/image//nvidia-jetson-nano-development-kit.jpg"/>
-							<figcaption align="center">Jetson Nano
-							</figcaption>
-						</figure>
-					<br>
-
-				        <li><b>Communication Systems</b>:</li>
-                                        <li>Communication systems are responsible for establishing a reliable connection between the rover and the ground control system. They enable real-time data transmission, command execution, and telemetry monitoring.</li>
-				        <li><b>Communication System Components</b>:</li>
-                                        <li><b>Hardware</b>: The hardware components of the communication system include telemetry systems and antennas. Telemetry systems establish a wireless link between the rover and the ground control system, allowing bidirectional data transmission. Antennas help in transmitting and receiving signals over the communication link.</li>
-				        <li><b>Software</b>: The software component of the communication system involves protocols and communication frameworks that facilitate data exchange between the rover and the ground control system. MAVLink is a popular communication protocol used in the drone and rover ecosystem. It provides a lightweight and efficient means of communication between different components of the system.</li>
-						<br><br>
-							<figure align=center>
-								<img align="center" style="width:400px" src="files/css/image/rover.png"/>
-								<figcaption align="center">Telemetry System</figcaption>
-							</figure>
+					
 					</li>
 					<br><br>
 
@@ -160,6 +138,44 @@
 	</table>
 
 	<br>
+        <table align=center width=850px>
+		<center><h1>Software </h1></center>
+		<tr>
+			<td> 
+				<ul>
+					<li><b> Mission Planner</b>
+					<li>Mission Planner is a ground control software for ArduPilot vehicles, offering tools for configuration, planning, and monitoring.</li>
+                                        <li>It provides an intuitive interface for setting up missions, calibrating sensors, and updating firmware within a Windows environment.</li>
+                                        <li>The software supports real-time telemetry, waypoint creation, and automated mission execution for effective vehicle management.</li>
+                                        <figure align=center>
+							<img style="width:500px" src="files/css/image/Mission Planner.jpg"/>
+							
+						
+					<li><b> OpenRouteService API</b>
+					<li>OpenRouteService API, based on OpenStreetMap, provides diverse routing solutions for different transportation modes including driving and cycling.</li>
+                                        <li>Chosen for its accuracy, free usage, and unlimited API calls, it effectively generates waypoints for navigation in varied environments.</li>
+                                        <li>It offers features like geocoding, reverse geocoding, and folium maps for comprehensive route planning and spatial analysis.</li>>       
+					<figure align=center>
+							<img style="width:500px" src="files/css/image/Folium map of openrouteservice.jpg"/>
+							
+
+					<li><b> Jetson Nano</b>
+					<li>Semantic segmentation models analyze camera feeds to classify objects and surfaces, enhancing the rover's environmental understanding.</li>
+                                        <li>The camera's depth data is crucial for curb detection and, combined with LiDAR, helps construct a comprehensive 3D map for navigation.</li>
+                                        <li>These models aid in real-time path planning by differentiating between traversable and non-traversable areas, ensuring safe navigation.</li>      
+					<figure align=center>
+							<img style="width:500px" src="files/css/image/Sematic segmentation 1.jpg"/>
+					<figure align=center>
+							<img style="width:500px" src="files/css/image/sematic segmentation 2.jpg"/>
+							
+					
+					<br><br>
+
+				</ul>
+			
+			</td>
+		</tr>
+	</table>
 
 	
 	<hr>
