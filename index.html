@@ -1,55 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <style>
-        #moreInfo {
-            display: none;
-            border: 1px solid #ddd;
-            border-collapse: collapse;
-            margin: auto;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background-color: #f9f9f9;
-            padding: 20px;
-            width: 850px;
-        }
+	<title>AGNI</title>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="YOUR_GTAG_JS_SOURCE"></script> 
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
 
-        .infoButton {
-            display: block;
-            width: 200px;
-            padding: 10px;
-            margin: 20px auto;
-            background-color: #007bff;
-            color: white;
-            text-align: center;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .infoButton:hover {
-            background-color: #0056b3;
-        }
-	.toggleButton {
-            display: block;
-            width: 200px;
-            padding: 10px;
-            margin: 20px auto;
-            background-color: #007bff;
-            color: white;
-            text-align: center;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .toggleButton:hover {
-            background-color: #0056b3;
-        }
-
-        .contentContainer {
-            display: none;
-        }    
-    </style>
+		gtag('config', 'UA-75863369-6');
+	</script>
 </head>
 <body>
+	<br>
+	<center>
 		<span style="font-size:36px">AGNI : Autonomous Ground Navigation Initiative</span>
 		<table align="center" width="1000px">
 			<tr>
@@ -84,26 +49,38 @@
             </table>
 
 		<br>
-	    <div class="toggleButton" onclick="toggleContent('motivationContent')">Toggle Motivation</div>
 
-   
-            <div id="motivationContent" class="contentContainer">
-
-		
+		<table align="center" width="850px">
+		<h1 style="text-align:center">Motivation</h1>
+		<tr>
+			<td>
+				<ul>
+					<li>Traversing rough terrain: Rovers are often deployed in environments with rugged landscapes such as rocky terrains, steep slopes, or even extraterrestrial surfaces. The inability to navigate such rough terrains restricts their access to important locations, limiting their ability to explore and gather valuable data. Overcoming this limitation would enable rovers to venture into previously inaccessible areas, unlocking new scientific discoveries and expanding our understanding of the natural and extraterrestrial worlds.</li>
+					<li>Inability to climb stairs: Urban and indoor environments often feature staircases or other vertical obstacles that pose significant challenges for rovers. This limitation hinders their ability to perform tasks in buildings, disaster-stricken areas, or even search and rescue operations. Enabling rovers to overcome this obstacle and navigate staircases would greatly expand their potential applications, allowing them to access areas that are currently inaccessible to conventional wheeled rovers.</li>
+					<li>Lack of overall visibility: Rovers typically rely on cameras and sensors to perceive their surroundings. However, these systems have limitations in terms of range, resolution, and field of view. The restricted visibility prevents rovers from comprehensively assessing their environment, which can lead to missed opportunities or potential hazards. Developing technologies that provide rovers with a broader and more detailed understanding of their surroundings would greatly enhance their situational awareness and decision-making capabilities.</li>
+					
+					
+				</ul>
+			</td>
+		</tr>
+	</table>
 
 	<hr>
-	 <table align="center" width="850px">
-        <h1 style="text-align:center">Problem Statement</h1>
-        <tr>
-            <td>
-                <ul>
-                    <li>Last-mile delivery challenges in urban environments include traffic congestion, delays, and environmental impacts, which hinder efficient operations.</li>
-                    <li>Existing solutions like rovers and drones face limitations in navigating rough terrain, stairs, and urban complexities, and have restricted operational ranges.</li>
-                    <li>A comprehensive solution integrating the strengths of both rovers and drones is needed to address these challenges, ensuring adaptable, safe, and efficient deliveries.</li>
-                </ul>
-            </td>
-        </tr>
-    </table>
+	<table align="center" width="850px">
+		<h1 style="text-align:center">Overview</h1>
+		<tr>
+			<td>
+				<ul>
+					<li>Our project focuses on developing an autonomous ground navigation system for a robot that can serve as an advanced delivery bot capable of delivering packages to various locations. With a range of innovative features, our solution aims to revolutionize the delivery industry by enabling efficient and intelligent autonomous delivery operations.</li>
+					<li><b>Autonomous Navigation</b>: The robot is equipped with state-of-the-art navigation capabilities, allowing it to autonomously navigate to designated destinations. It utilizes advanced algorithms and sensor data to make intelligent decisions and safely navigate through various terrains, obstacles, and road conditions.</li>
+					<li><b>Object Detection</b>: Our system incorporates sophisticated object detection techniques that enable the robot to detect and recognize objects in its surroundings. This capability ensures safe and reliable navigation by identifying potential obstacles or hazards along its path.</li>
+					<li><b>Sign Detection and Understanding</b>: Our system incorporates advanced computer vision algorithms to detect and interpret road signs and other relevant signage. This feature enables the robot to comprehend traffic regulations, navigate through intersections, and follow specific instructions, ensuring compliance with traffic rules and enhancing overall safety.</li>
+					<li><b>End-to-End Delivery</b>: Our solution provides end-to-end delivery capabilities, from pickup to final destination. The robot can autonomously handle package collection, secure storage, route planning, and efficient delivery, eliminating the need for human intervention throughout the process.</li>
+				        <li>By combining cutting-edge technologies, including advanced navigation algorithms, computer vision, and intelligent decision-making, our autonomous ground navigation system offers a comprehensive and reliable solution for autonomous delivery operations. With its ability to detect objects, understand road conditions, and navigate autonomously, our robot has the potential to revolutionize the delivery industry, providing efficient and safe deliveries to diverse locations.</li>
+				</ul>
+			</td>
+		</tr>
+	</table>
 	<br>
 	<hr>
 	<table align=center width=850px>
@@ -186,7 +163,7 @@
 					          <br><br>
 					    <img class="round" style="width:350px; display: block; margin: auto;" src="files/css/image/Screenshot (42).png"/>
                                         </figure>
-					<figcaption align="center"><b>AGNI tracing its path on the road and staying away from the grass</b></figcaption>
+					<figcaption align="center"><b>AGNI tracing its path on the road and starying away from the grass</b></figcaption>
 
 					           <br><br>
 					
@@ -335,11 +312,6 @@
 <center> <h1> Contact </h1>
 	<p>If you have any questions, please reach out to any of the above mentioned authors.</p>
 	</center>
-    <script>
-        function toggleContent(contentId) {
-            var content = document.getElementById(contentId);
-            content.classList.toggle('active');
-        }
-    </script>
+
 </body>
 </html>
